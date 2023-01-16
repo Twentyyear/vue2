@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<script>
+    //响应式数据变化,数据变化了我可以检测到数据变化
+    //数据的取值和更改值我们要监测到
+    const vm = new Vue({
+        data() { //数据代理
+            return {
+                name: 'zhangsan',
+                age: 11,
+                address: {
+                    num: 9,
+                    content: '回龙观'
+                },
+                hobby:['吃','喝',{a:1}]
+            }
+        }
+    })
+    vm.name = 'lisi' //修改触发set
+    vm.address = { num: 20}
+    console.log(vm) //触发取值get vm.xxx --> vm.data.xxx
+    //修改数组很少用索引来操作数组 如 hobby[888] ,但是内部做劫持会浪费性能
+    //用户一般修改数组都是通过 push shift ...
+    vm.hobby.push('1');
+    vm.hobby[2].a = 100 //数组中的引用类型也应该被劫持
+</script>
+</body>
+</html>

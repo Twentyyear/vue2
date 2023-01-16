@@ -7,7 +7,6 @@ export function initMixin(Vue) {//就是给Vue增加init方法
         //这里用this有点恶心 需要保存一下this
         const vm = this
         vm.$options = options //将用户的选项挂载到实例上
-
         //初始化状态
         initState(vm)
 
