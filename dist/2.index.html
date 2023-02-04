@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="app">
-    <div>{{name}}</div>
+    <div style="color: red">{{name}}hello</div>
     <span>{{age}}</span>
 </div>
 <script src="vue.js"></script>
@@ -24,7 +24,7 @@
             }
         },
         el: "#app",//我们要将数据 解析到el元素上  这里也可以不写 在下面手动挂载 vm.$mount('#app')
-        template:' <div>hello</div>'
+        // template:' <div>hello</div>'
     })
     // vm.$mount('#app')//手动挂载最后也是调的一个方法
     //1.模板引擎 性能差 需要正则匹配替换 1.0的时候没有引入虚拟DOM的改变
